@@ -23,6 +23,5 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'docker'
-        repository: 'Crisz360/docker'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        repository: crisz360/docker
