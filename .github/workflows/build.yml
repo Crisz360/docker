@@ -1,18 +1,13 @@
 name: 'Docker Angular'
-on:
-  push:
-    branches:
-      - main
+on: push
 jobs:
   build-container:
     name: 'Build Angular container image'
     runs-on: ubuntu-latest
-    container:
-      image: seesharprun/pandoc-build
     steps:
-      - name: 'Checkout Code'
+      - name: Checkout Code
         uses: actions/checkout@v2
-      - name: 'Public to GitHub'
+      - name: Public to GitHub
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
