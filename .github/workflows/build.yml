@@ -15,7 +15,7 @@ jobs:
       - name: 'Public to GitHub'
         uses: docker/build-push-action@v1
         with:
-          username: ${{ github.Crisz360 }}
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/next
