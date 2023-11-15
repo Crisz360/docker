@@ -1,0 +1,16 @@
+@import "./../../../../assets/css/variables";
+
+.bg-custom-nav {
+	background-color: $grey !important;
+	color: $white !important;
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.navbar-collapse {
+	color: $white;
+}

@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/css/style";
+@import 'igniteui-angular/lib/core/styles/themes/index';
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+$custom-stepper-theme: stepper-theme($current-title-color: #351e65,
+		$current-subtitle-color: #5f4691,
+		$step-separator-style: "solid"
+	);
