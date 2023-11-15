@@ -1,0 +1,29 @@
+name: 'Docker Angular'
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-container:
+    name: 'Build Angular container image'
+    runs-on: ubuntu-latest
+    container:
+      image: seesharprun/pandoc-build
+    steps:
+      - name: 'Checkout Code'
+        uses: actions/checkout@v2
+      - name: 'Public to GitHub'
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.Crisz360 }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: ${{ github.repository }}/next
+          tags: latest, ${{ github.run_number }}
+      - name: Publish to Docker Hub
+        uses: docker/build-push-action@v1
+        with: 
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: Crisz360/next
+          tags: latest, ${{ github.run_number }}
